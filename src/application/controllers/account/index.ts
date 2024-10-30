@@ -71,13 +71,15 @@ export default class AccountController {
   async show(req, res) {
     const { id } = req.params;
 
-    try {
-      const account = await this.service.show(id);
+    try {      
+      const account = await this.service.show(id);      
       if (account){
         const filteredAccount = this.filter.filter(account);
-        res.sendResponse(filteredAccount);  
+        return res.sendResponse(filteredAccount);  
+      }else{
+        throw {message:  AcccountResponseMessages.ACCOUNT_NOT_FOUND}
       }
-      throw {message:  AcccountResponseMessages.ACCOUNT_NOT_FOUND}
+      
     } catch (error) {
       throw { statusCode: 403, error: error.errors || error.message || error }
     }  
