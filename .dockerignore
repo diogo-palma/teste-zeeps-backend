@@ -1,0 +1,10 @@
+package-lock.json
+node_modules/
+lib/
+npm-debug.log*
+.vscode/
+.env
+.git
+.gitignore
+.env
+docker-compose.yml
