@@ -41,7 +41,7 @@ export default class AccountService {
         total: result.totalDocs, 
         page: result.page, 
         limit: result.limit, 
-        totalPages
+        totalPages,
       }
     };
   }
